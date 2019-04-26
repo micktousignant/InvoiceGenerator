@@ -2,20 +2,31 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
     <title>MF Invoice Generator</title>
+    <meta charset="utf-8">
+    <script src="main.js"></script>
     <link rel="stylesheet" href="css/main.css">
   </head>
 
   <body>
+    <form id="InvoiceNumberForm" class="invoiceEditForm">
+      <textarea class="textareaEditForm" name="InvoiceNumberText" rows="1" cols="9"></textarea>
+      <br>
+      <button type="submit">Change Invoice Number</button>
+    </form>
+    <form id="InvoiceDateForm" class="invoiceEditForm">
+      <textarea class="textareaEditForm" name="DateText" rows="1" cols="10"></textarea>
+      <br>
+      <button type="submit">Change Date</button>
+    </form>
     <div class="invoice-box">
         <table cellpadding="0" cellspacing="0">
             <tr class="top">
                 <td colspan="5">
                     <table>
                         <tr>
-                            <td>M190424_1</td>
-                            <td class="date" align="right">2019-04-24</td>
+                            <td id="InvoiceNumber">M190424_1</td>
+                            <td id="InvoiceDate" align="right" class="date">2019-04-24</td>
                         </tr>
                     </table>
                     <table>

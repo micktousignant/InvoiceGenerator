@@ -103,6 +103,10 @@
     line-height: 12px;
 }
 
+.date {
+  align: right;
+}
+
 @media print {
     body {
         background-color: #FFF;
@@ -144,4 +148,14 @@
 
 .rtl table tr td:nth-child(2) {
     text-align: left;
+}
+
+/** Form **/
+.textareaEditForm {
+  resize: none;
+}
+
+.invoiceEditForm {
+  padding: 0 5px;
+  display: inline-block;
 }
