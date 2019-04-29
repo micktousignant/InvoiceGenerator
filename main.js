@@ -44,6 +44,16 @@ function ChangeInvoiceClient(event) {
                          "<br>" + event.target.ClientZip.value + "<br>"
 }
 
+function ToPrintView(event) {
+  event.preventDefault();
+  document.getElementById( "InvoiceNumberForm" ).style.visibility = 'hidden';
+  document.getElementById( "InvoiceDateForm" ).style.visibility = 'hidden';
+  document.getElementById( "InvoiceDescriptionForm" ).style.visibility = 'hidden';
+  document.getElementById( "AddItemForm" ).style.visibility = 'hidden';
+  document.getElementById( "ChangeClientForm" ).style.visibility = 'hidden';
+  document.getElementById( "PrintViewForm" ).style.visibility = 'hidden';
+}
+
 document.addEventListener("DOMContentLoaded", function() {
   let testerNumber = document.querySelector("#InvoiceNumberForm");
   testerNumber.addEventListener("submit", function(event) {
@@ -64,5 +74,9 @@ document.addEventListener("DOMContentLoaded", function() {
   let testerChangeClient = document.querySelector("#ChangeClientForm");
   testerChangeClient.addEventListener("submit", function(event) {
     ChangeInvoiceClient(event);
+  });
+  let testerPrint = document.querySelector("#PrintViewForm");
+  testerPrint.addEventListener("submit", function(event) {
+    ToPrintView(event);
   });
 });
