@@ -19,6 +19,11 @@
       <br>
       <button type="submit">Change Date</button>
     </form>
+    <form id="InvoiceDescriptionForm" class="invoiceEditForm">
+      <textarea class="textareaEditForm" name="DescriptionText" rows="1" cols="25"></textarea>
+      <br>
+      <button type="submit">Change Description</button>
+    </form>
     <form id="AddItemForm" class="invoiceEditForm">
       <textarea class="textareaEditForm" name="ItemName" rows="1" cols="30" placeholder="Name"></textarea>
       <textarea class="textareaEditForm" name="ItemType" rows="1" cols="30" placeholder="Type"></textarea>
@@ -26,6 +31,15 @@
       <textarea class="textareaEditForm" name="ItemQantity" rows="1" cols="8" placeholder="Quantity"></textarea>
       <br>
       <button type="submit">Add Item</button>
+    </form>
+    <form id="ChangeClientForm" class="invoiceEditForm">
+      <textarea class="textareaEditForm" name="ClientName" rows="1" cols="20" placeholder="Name"></textarea>
+      <textarea class="textareaEditForm" name="ClientAddress" rows="1" cols="20" placeholder="Address"></textarea>
+      <textarea class="textareaEditForm" name="ClientCity" rows="1" cols="15" placeholder="City"></textarea>
+      <textarea class="textareaEditForm" name="ClientProv" rows="1" cols="4" placeholder="Prov"></textarea>
+      <textarea class="textareaEditForm" name="ClientZip" rows="1" cols="7" placeholder="A1A 1A1"></textarea>
+      <br>
+      <button type="submit">Change Client</button>
     </form>
     <div class="invoice-box">
         <table cellpadding="0" cellspacing="0">
@@ -53,10 +67,10 @@
                                 Ste-Therese, QC<br>
                                 J7E 2W7<br>
                                 <br>
-                                Commande de prises
+                                  <p id="InvoiceDescription">Commande de prises</p>
                             </td>
                             <td width= "20%"></td>
-                            <td class="clientinfo" width="30%">
+                            <td id="ClientInfo" class="clientinfo" width="30%">
                                 <b>Facturé à</b><br>
                                 Zero Gravite<br>
                                 4515 av Papineau<br>
@@ -108,8 +122,8 @@
                 <td></td>
                 <td>TPS</td>
 
-                <td>
-                    2.00$
+                <td id="TPSText">
+                    0.00$
                 </td>
             </tr>
             <tr class="total">
@@ -118,8 +132,8 @@
                 <td></td>
                 <td>TVQ</td>
 
-                <td>
-                    3.00$
+                <td id="TVQText">
+                    0.00$
                 </td>
             </tr>
             <tr class="total">
@@ -128,8 +142,8 @@
                 <td></td>
                 <td>Shipping</td>
 
-                <td>
-                  25.00$
+                <td id="ShippingText">
+                  0.00$
                 </td>
             </tr>
             <tr class="total">
@@ -138,8 +152,8 @@
                 <td></td>
                 <td>TOTAL</td>
 
-                <td>
-                  54.98$
+                <td id="GrandTotalText">
+                  0.00$
                 </td>
             </tr>
             <tr class="mainfootnote">
