@@ -46,12 +46,20 @@ function ChangeInvoiceClient(event) {
 
 function ToPrintView(event) {
   event.preventDefault();
-  document.getElementById( "InvoiceNumberForm" ).style.visibility = 'hidden';
-  document.getElementById( "InvoiceDateForm" ).style.visibility = 'hidden';
-  document.getElementById( "InvoiceDescriptionForm" ).style.visibility = 'hidden';
-  document.getElementById( "AddItemForm" ).style.visibility = 'hidden';
-  document.getElementById( "ChangeClientForm" ).style.visibility = 'hidden';
-  document.getElementById( "PrintViewForm" ).style.visibility = 'hidden';
+  document.getElementById("InvoiceMenu").style.display = 'none';
+}
+
+function AddShipping(event) {
+  event.preventDefault();
+  let ShippingCost = parseFloat(event.target.ShippingAmount.value);
+  let SousTotal = parseFloat(SousTotalText.innerHTML);
+  let TPSamount = parseFloat(TPSText.innerHTML);
+  let TVQamount = parseFloat(TVQText.innerHTML);
+  let GrandTotal = 0.0;
+  ShippingText.innerHTML = ShippingCost.toFixed(2) + "$";
+  GrandTotal = SousTotal + TPSamount + TVQamount + ShippingCost;
+  GrandTotalText.innerHTML = GrandTotal.toFixed(2) + "$";
+  document.getElementById( "ShippingRow" ).style.display = 'table-row';
 }
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -78,5 +86,9 @@ document.addEventListener("DOMContentLoaded", function() {
   let testerPrint = document.querySelector("#PrintViewForm");
   testerPrint.addEventListener("submit", function(event) {
     ToPrintView(event);
+  });
+  let testerAddShipping = document.querySelector("#AddShippingForm");
+  testerAddShipping.addEventListener("submit", function(event) {
+    AddShipping(event);
   });
 });

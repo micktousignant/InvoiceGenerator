@@ -9,42 +9,51 @@
   </head>
 
   <body>
-    <form id="InvoiceNumberForm" class="invoiceEditForm">
-      <textarea class="textareaEditForm" name="InvoiceNumberText" rows="1" cols="9"></textarea>
-      <br>
-      <button type="submit">Change Invoice Number</button>
-    </form>
-    <form id="InvoiceDateForm" class="invoiceEditForm">
-      <textarea class="textareaEditForm" name="DateText" rows="1" cols="10"></textarea>
-      <br>
-      <button type="submit">Change Date</button>
-    </form>
-    <form id="InvoiceDescriptionForm" class="invoiceEditForm">
-      <textarea class="textareaEditForm" name="DescriptionText" rows="1" cols="25"></textarea>
-      <br>
-      <button type="submit">Change Description</button>
-    </form>
-    <form id="AddItemForm" class="invoiceEditForm">
-      <textarea class="textareaEditForm" name="ItemName" rows="1" cols="30" placeholder="Name"></textarea>
-      <textarea class="textareaEditForm" name="ItemType" rows="1" cols="30" placeholder="Type"></textarea>
-      <textarea class="textareaEditForm" name="ItemPrice" rows="1" cols="10" placeholder="Unit Price"></textarea>
-      <textarea class="textareaEditForm" name="ItemQantity" rows="1" cols="8" placeholder="Quantity"></textarea>
-      <br>
-      <button type="submit">Add Item</button>
-    </form>
-    <form id="ChangeClientForm" class="invoiceEditForm">
-      <textarea class="textareaEditForm" name="ClientName" rows="1" cols="20" placeholder="Name"></textarea>
-      <textarea class="textareaEditForm" name="ClientAddress" rows="1" cols="20" placeholder="Address"></textarea>
-      <textarea class="textareaEditForm" name="ClientCity" rows="1" cols="15" placeholder="City"></textarea>
-      <textarea class="textareaEditForm" name="ClientProv" rows="1" cols="4" placeholder="Prov"></textarea>
-      <textarea class="textareaEditForm" name="ClientZip" rows="1" cols="7" placeholder="A1A 1A1"></textarea>
-      <br>
-      <button type="submit">Change Client</button>
-    </form>
-    <br>
-    <form id="PrintViewForm" class="invoiceEditForm">
-      <button type="submit">PrintView</button>
-    </form>
+    <div id="InvoiceMenu" class="dropdown">
+      <span class="dropDownTitle">Invoice Modifiction Menu</span>
+      <div class="dropdown-content">
+        <form id="PrintViewForm" class="invoiceEditForm">
+          <button type="submit">PrintView</button>
+        </form>
+        <form id="InvoiceNumberForm" class="invoiceEditForm">
+          <textarea class="textareaEditForm" name="InvoiceNumberText" rows="1" cols="9" placeholder="XAAMMJJ_#"></textarea>
+          <br>
+          <button type="submit">Change Invoice Number</button>
+        </form>
+        <form id="InvoiceDateForm" class="invoiceEditForm">
+          <textarea class="textareaEditForm" name="DateText" rows="1" cols="10" placeholder="AAAA-MM-JJ"></textarea>
+          <br>
+          <button type="submit">Change Date</button>
+        </form>
+        <form id="InvoiceDescriptionForm" class="invoiceEditForm">
+          <textarea class="textareaEditForm" name="DescriptionText" rows="1" cols="25" placeholder="Invoice Desc."></textarea>
+          <br>
+          <button type="submit">Change Description</button>
+        </form>
+        <form id="AddItemForm" class="invoiceEditForm">
+          <textarea class="textareaEditForm" name="ItemName" rows="1" cols="30" placeholder="Name"></textarea>
+          <textarea class="textareaEditForm" name="ItemType" rows="1" cols="30" placeholder="Type"></textarea>
+          <textarea class="textareaEditForm" name="ItemPrice" rows="1" cols="10" placeholder="Unit Price"></textarea>
+          <textarea class="textareaEditForm" name="ItemQantity" rows="1" cols="8" placeholder="Quantity"></textarea>
+          <br>
+          <button type="submit">Add Item</button>
+        </form>
+        <form id="ChangeClientForm" class="invoiceEditForm">
+          <textarea class="textareaEditForm" name="ClientName" rows="1" cols="20" placeholder="Name"></textarea>
+          <textarea class="textareaEditForm" name="ClientAddress" rows="1" cols="20" placeholder="Address"></textarea>
+          <textarea class="textareaEditForm" name="ClientCity" rows="1" cols="15" placeholder="City"></textarea>
+          <textarea class="textareaEditForm" name="ClientProv" rows="1" cols="4" placeholder="Prov"></textarea>
+          <textarea class="textareaEditForm" name="ClientZip" rows="1" cols="7" placeholder="A1A 1A1"></textarea>
+          <br>
+          <button type="submit">Change Client</button>
+        </form>
+        <form id="AddShippingForm" class="invoiceEditForm">
+          <textarea class="textareaEditForm" name="ShippingAmount" rows="1" cols="10" placeholder="##.##"></textarea>
+          <br>
+          <button id="AddShippingBt" type="submit">Add Shipping</button>
+        </form>
+      </div>
+    </div>
     <div class="invoice-box">
         <table cellpadding="0" cellspacing="0">
             <tr class="top">
@@ -140,7 +149,7 @@
                     0.00$
                 </td>
             </tr>
-            <tr class="total">
+            <tr id="ShippingRow" class="total">
                 <td></td>
                 <td></td>
                 <td></td>
