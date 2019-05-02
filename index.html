@@ -15,6 +15,12 @@
         <form id="PrintViewForm" class="invoiceEditForm">
           <button type="submit">PrintView</button>
         </form>
+        <form id="TypeForm" class="invoiceEditForm">
+          <input type="radio" name="InvoiceType" value="FACTURE" checked="checked">Facture</input>
+          <input type="radio" name="InvoiceType" value="SOUMISSION">Soumission</input>
+          <br>
+          <button type="submit">Change Type</button>
+        </form>
         <form id="InvoiceNumberForm" class="invoiceEditForm">
           <textarea class="textareaEditForm" name="InvoiceNumberText" rows="1" cols="9" placeholder="XAAMMJJ_#"></textarea>
           <br>
@@ -66,7 +72,7 @@
                     </table>
                     <table>
                         <tr>
-                            <td class="maintitle" colspan="8">
+                            <td id="TypeTitle" class="maintitle" colspan="8">
                                 FACTURE
                             </td>
                         </tr>

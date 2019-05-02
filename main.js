@@ -49,6 +49,11 @@ function ToPrintView(event) {
   document.getElementById("InvoiceMenu").style.display = 'none';
 }
 
+function ChangeInvoiceType(event) {
+  event.preventDefault();
+  TypeTitle.innerHTML = event.target.InvoiceType.value;
+}
+
 function AddShipping(event) {
   event.preventDefault();
   let ShippingCost = parseFloat(event.target.ShippingAmount.value);
@@ -90,5 +95,9 @@ document.addEventListener("DOMContentLoaded", function() {
   let testerAddShipping = document.querySelector("#AddShippingForm");
   testerAddShipping.addEventListener("submit", function(event) {
     AddShipping(event);
+  });
+  let testerChangeType = document.querySelector("#TypeForm");
+  testerChangeType.addEventListener("submit", function(event) {
+    ChangeInvoiceType(event);
   });
 });
