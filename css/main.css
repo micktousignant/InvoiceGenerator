@@ -193,3 +193,24 @@
   border-width: medium;
   padding: 5px;
 }
+
+@media (max-width: 800px) {
+  .dropdown {
+    position: inherit;
+    display: inline-block;
+  }
+
+  .dropDownTitle {
+    display: none;
+  }
+
+  .dropdown-content {
+    position: inherit;
+    display: block;
+  }
+  
+  .invoiceEditForm:first-child {
+	  display: block;
+	  width: 75px;
+  }
+}
